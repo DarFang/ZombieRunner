@@ -11,6 +11,7 @@ namespace StarterAssets
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
+		public bool fire;
 		public bool sprint;
 
 		[Header("Movement Settings")]
@@ -24,6 +25,10 @@ namespace StarterAssets
 		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
+		}
+		public void OnFire(InputValue value)
+		{
+			FireInput(value.isPressed);
 		}
 
 		public void OnLook(InputValue value)
@@ -54,6 +59,10 @@ namespace StarterAssets
 		public void LookInput(Vector2 newLookDirection)
 		{
 			look = newLookDirection;
+		}
+		public void FireInput(bool FireState)
+		{
+			fire = FireState;
 		}
 
 		public void JumpInput(bool newJumpState)
