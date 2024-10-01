@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Die()
     {
+        GetComponent<DeathHandler>().HandleDeath();
         Debug.Log("You have unfortunately died");
     }
 }
