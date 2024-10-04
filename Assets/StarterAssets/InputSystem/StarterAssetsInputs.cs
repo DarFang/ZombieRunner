@@ -1,6 +1,7 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Android;
 #endif
 
 namespace StarterAssets
@@ -13,6 +14,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool fire;
 		public bool sprint;
+		public bool aim;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -48,6 +50,10 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+		public void OnAim(InputValue value)
+		{
+			AimInput(value.isPressed);
+		}
 #endif
 
 
@@ -69,7 +75,10 @@ namespace StarterAssets
 		{
 			jump = newJumpState;
 		}
-
+		public void AimInput(bool newAimState)
+		{
+			aim = newAimState;
+		}
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
