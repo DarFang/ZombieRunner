@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 8773913690462362533}
   - component: {fileID: 801382526435222043}
   - component: {fileID: 4802902812458221007}
+  - component: {fileID: 6749187272215604915}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -278,6 +279,7 @@ MonoBehaviour:
   jump: 0
   fire: 0
   sprint: 0
+  aim: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -414,9 +416,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a2b7bea9421c84ebb3a0bfd83f3200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FPSCam: {fileID: 9005220658301417138}
+  FPSCam: {fileID: 8762286023738035824}
   zoomedOutFOV: 60
   zoomedInFOV: 20
+  zoomOutSpeed: 1
+  zoomInSpeed: 0.1
+--- !u!114 &6749187272215604915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb223498b81e5d43b6ce31c0e16465b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 10
 --- !u!1001 &457808651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,6 +501,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
+        type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
 --- !u!4 &8762286023738035825 stripped
@@ -492,6 +514,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 457808651}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8762286023738035824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
+    type: 3}
+  m_PrefabInstance: {fileID: 457808651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2047428951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -556,6 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
@@ -593,6 +632,10 @@ PrefabInstance:
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 9005220658301417138}
+    - target: {fileID: 16429743, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 6749187272215604915}
     - target: {fileID: 16429743, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: hitEffect
       value: 
